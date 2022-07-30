@@ -1,6 +1,7 @@
 import type { Mutation } from './mutation'
 import type { Query } from './query'
 import { EnsuredQueryKey } from './types'
+import { stringify } from 'flatted'
 import type {
   MutationFunction,
   MutationKey,
@@ -299,7 +300,7 @@ export function hashQueryKey(queryKey: QueryKey): string {
  * Hashes the value into a stable hash.
  */
 export function stableValueHash(value: any): string {
-  return JSON.stringify(value, (_, val) =>
+  return stringify(value, (_, val) =>
     isPlainObject(val)
       ? Object.keys(val)
           .sort()
