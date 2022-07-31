@@ -8,7 +8,6 @@ node_modules
 types
 build
 dist
-lib
 es
 artifacts
 .rpt2_cache
